@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 15, 2024 at 06:41 AM
+-- Generation Time: Jan 15, 2025 at 08:49 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `kasir`
+-- Database: `kasir_app`
 --
 
 -- --------------------------------------------------------
@@ -43,6 +43,14 @@ CREATE TABLE `p_userkasir` (
   `password` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `p_userkasir`
+--
+
+INSERT INTO `p_userkasir` (`ID_Kasir`, `namaKasir`, `password`) VALUES
+('1', 'admin', 'admin'),
+('2', 'petugas', 'petugas');
+
 -- --------------------------------------------------------
 
 --
@@ -58,6 +66,14 @@ CREATE TABLE `t_barang` (
   `expdata` date NOT NULL,
   `stok` smallint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `t_barang`
+--
+
+INSERT INTO `t_barang` (`ID`, `idBarang`, `nmBarang`, `hargaPokok`, `hargaJual`, `expdata`, `stok`) VALUES
+(1, '101', 'Seblak', 5000, 6500, '2025-01-15', 50),
+(2, '102', 'Kursi', 50000, 60000, '2033-01-08', 35);
 
 -- --------------------------------------------------------
 
@@ -131,7 +147,7 @@ ALTER TABLE `t_tempkasir`
 -- AUTO_INCREMENT for table `t_barang`
 --
 ALTER TABLE `t_barang`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `t_kasir`
